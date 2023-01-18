@@ -1,3 +1,6 @@
+# How to use
+Make sure you have docker installed.
+
 ### Install datahub
 ```
 python3 -m pip install --upgrade acryl-datahub
@@ -5,7 +8,7 @@ python3 -m pip install --upgrade acryl-datahub
 
 ### Start datahub instance
 ```
-datahub docker quickstart [--version TEXT (e.g. "v0.8.43")]
+datahub docker quickstart [--version TEXT (e.g. "v0.9.2")]
 ```
 
 ### Load sample data
@@ -13,16 +16,19 @@ datahub docker quickstart [--version TEXT (e.g. "v0.8.43")]
 datahub docker ingest-sample-data
 ```
 
-### Ingest new pull-based source
-```
-datahub ingest -c <recipe_name>.dhub.yaml
-```
-
-### Start local kafka
+### Start local airflow
+Go to local_airflow directory and run
 ```
  docker-compose -f docker-compose.yml up -d
 ```
 
+### Start local kafka (optional) if you want to test kafka ingestion to DataHub
+Go to local_kafka directory and run
+```
+ docker-compose -f docker-compose.yml up -d
+```
+
+# Useful scripts
 ### List kafka topics
 ```
 docker exec kafka_test_broker \
@@ -36,10 +42,4 @@ docker exec --interactive --tty kafka_test_broker \
 kafka-console-consumer --bootstrap-server kafka_test_broker:49816 \
                        --topic transaction \
                        --from-beginning
-```
-
-### Start local airflow 
-```
-https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
-https://datahubproject.io/docs/docker/airflow/local_airflow
 ```

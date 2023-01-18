@@ -2,7 +2,7 @@ from ethereumetl.cli import stream
 
 LAST_BLOCK_FILE = "last_block.csv"
 LAG = 0
-PROVIDER_URI = "https://mainnet.infura.io/v3/048f0ae95de244beb54567ddd96e6c00"
+PROVIDER_URI = "" # TO DO: provider URI for RPC endpoint
 OUTPUT = "kafka/127.0.0.1:49816"
 START_BLOCK = None #15997754
 ENTITY_TYPES = "transaction"
