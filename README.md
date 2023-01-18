@@ -28,6 +28,12 @@ Go to local_kafka directory and run
  docker-compose -f docker-compose.yml up -d
 ```
 
+### Ingest local kafka (optional) if you want to test kafka ingestion to DataHub
+Go to local_datahub/recipes
+```
+datahub ingest -c kafka_test_recipe.dhub.yaml
+```
+
 # Useful scripts
 ### List kafka topics
 ```
