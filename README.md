@@ -34,6 +34,12 @@ Go to local_datahub/recipes
 datahub ingest -c kafka_test_recipe.dhub.yaml
 ```
 
+### Sending ethereum transactions to local kafka (optional) if you want to test kafka ingestion to DataHub
+Go to scripts and run
+```
+python3 eth_tx.py
+```
+
 # Useful scripts
 ### List kafka topics
 ```
